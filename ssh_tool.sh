@@ -16,7 +16,7 @@ skyblue='\e[1;96m'
 create_shortcut() {
     wrapper_content='#!/bin/bash
 # 在线获取最新脚本并执行
-SCRIPT_URL="https://raw.githubusercontent.com/eooce/ssh_tool/main/ssh_tool.sh"
+SCRIPT_URL="https://github.com/hyp3699/ssh_tool/raw/refs/heads/main/ssh_tool.sh"
 TEMP_SCRIPT="/tmp/ssh_tool_latest.sh"
 
 # 下载最新脚本（屏蔽输出）
