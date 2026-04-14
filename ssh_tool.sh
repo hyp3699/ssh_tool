@@ -185,17 +185,6 @@ install_certbot() {
     echo "0 0 * * * cd ~ && ./auto_cert_renewal.sh" | crontab -
 }
 
-install_ssltls() {
-      docker stop nginx > /dev/null 2>&1
-      iptables_open
-      cd ~
-      certbot certonly --standalone -d $yuming --email your@email.com --agree-tos --no-eff-email --force-renewal
-      cp /etc/letsencrypt/live/$yuming/cert.pem /home/web/certs/${yuming}_cert.pem
-      cp /etc/letsencrypt/live/$yuming/privkey.pem /home/web/certs/${yuming}_key.pem
-      docker start nginx > /dev/null 2>&1
-}
-
-
 default_server_ssl() {
 install openssl
 openssl req -x509 -nodes -newkey rsa:2048 -keyout /home/web/certs/default_server.key -out /home/web/certs/default_server.crt -days 5475 -subj "/C=US/ST=State/L=City/O=Organization/OU=Organizational Unit/CN=Common Name"
