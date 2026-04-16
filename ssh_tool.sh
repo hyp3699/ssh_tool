@@ -216,14 +216,6 @@ nginx_status() {
 
 }
 
-
-add_yuming() {
-      ip_address
-      echo -e "先将域名解析到本机IP: \033[33m$ipv4_address  $ipv6_address\033[0m"
-      read -p "请输入你解析的域名: " yuming
-}
-
-
 add_db() {
       dbname=$(echo "$yuming" | sed -e 's/[^A-Za-z0-9]/_/g')
       dbname="${dbname}"
